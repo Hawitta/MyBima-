@@ -14,7 +14,6 @@ class UserPaymentsController < ApplicationController
   def new
     @user_payment = UserPayment.new
     @covers = Cover.all
-
     session[:user_payment_step] ||= 1
     render_step
   end
@@ -26,7 +25,6 @@ class UserPaymentsController < ApplicationController
   # POST /user_payments or /user_payments.json
   def create
     @user_payment = UserPayment.new(user_payment_params)
-
     respond_to do |format|
       if @user_payment.save
         format.html { redirect_to @user_payment, notice: "User payment was successfully created." }
@@ -40,7 +38,6 @@ class UserPaymentsController < ApplicationController
 
   # PATCH/PUT /user_payments/1 or /user_payments/1.json
   def update
-
     session[:user_payment] ||= {}
     respond_to do |format|
       if @user_payment.update(user_payment_params)
@@ -56,7 +53,6 @@ class UserPaymentsController < ApplicationController
   # DELETE /user_payments/1 or /user_payments/1.json
   def destroy
     @user_payment.destroy!
-
     respond_to do |format|
       format.html { redirect_to user_payments_path, status: :see_other, notice: "User payment was successfully destroyed." }
       format.json { head :no_content }
@@ -71,7 +67,6 @@ class UserPaymentsController < ApplicationController
   def insurance_type
     @covers = Cover.all
     @user_payment = UserPayment.new
-
   end
 
   def personal_details
@@ -84,12 +79,6 @@ class UserPaymentsController < ApplicationController
     @user_payment = UserPayment.new
   end
 
-
-
-
-
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_payment
@@ -101,17 +90,12 @@ class UserPaymentsController < ApplicationController
       params.expect(user_payment: [ :user_id, :insurance_type, :cover_id, :amount_paid, :payment_mode, :date ])
     end
 
-    # def render_step
-    #   case session[:user_payment_step]
-    #   when 1 then render "user_payments/insurance_type"
-    #   when 2 then render "user_payments/insurance_cover"
-    #   when 3 then render "user_payments/personal_details"
-    #   when 4 then render "user_payments/make_payment"
-    #   end
-    # end
-
-
-  
-  
-
+    def render_step
+      case session[:user_payment_step]
+      when 1 then render "user_payments/insurance_type"
+      when 2 then render "user_payments/insurance_cover"
+      when 3 then render "user_payments/personal_details"
+      when 4 then render "user_payments/make_payment"
+      end
+    end
 end
