@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Covers" %>
+
+<h1>Insurance Covers</h1>
+
+<% if admin_signed_in? %>
+<div class="d-flex">
+<%= link_to "New cover", new_cover_path , class:'btn btn-secondary ms-auto'%>
+</div>
+<% end %>
+
+
+<br />
+
+<div class="d-flex flex-wrap gap-5">
+
+<% @covers.each do |cover| %>
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title"><%= cover.cover_name %> </h5>
+    <hr>
+    <h6 class="card-text"> <%= cover.insurance_type %> </h6>
+     <p class="card-text"> <%= cover.insurance_company.company_name %> </p>
+    <br/>
+
+    <% if admin_signed_in? %>
+    <p> <%= link_to "Show", cover, class:"btn btn-primary" %> </p>
+    <% end %>
+  </div>
+
+</div>
+  <% end %>
+</div>
+
+
+

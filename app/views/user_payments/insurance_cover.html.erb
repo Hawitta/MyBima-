@@ -1,0 +1,45 @@
+<%= form_with(model: @user_payment) do |form| %>
+    <% if @user_payment.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@user_payment.errors.count, "error") %> prohibited this user_payment from being saved:</h2>
+  
+        <ul>
+          <% @user_payment.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+   <div class="form-group mb-3">
+   <br/>
+    <%= form.label :cover_id, "2. Select insurance cover"%>
+ 
+    <div class="container">
+    <br/>
+    <div class="d-flex flex-wrap gap-3"> <!-- Flexbox container -->
+      <% @covers.uniq { |cover| cover.insurance_type }.each do |cover| %>
+        <br/>
+        <div class="card" style="width: 14rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= cover.insurance_type %></h5>
+            <p class="card-text"> Shalallala </p>
+            <a href="#" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+  </div>
+  
+  <br/>
+  
+  <div>
+  <%= link_to "Next", user_payments_personal_details_path, class:"btn btn-secondary" %>
+  
+  </div>
+  
+   
+  <% end %>
+  

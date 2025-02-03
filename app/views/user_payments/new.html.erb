@@ -1,0 +1,11 @@
+<% content_for :title, "New user payment" %>
+<br/>
+<h3>New insurance payment</h3>
+<br/>
+<%= render "form", user_payment: @user_payment %>
+
+<br>
+
+<div>
+  <%= link_to "Back to user payments", user_payments_path %>
+</div>

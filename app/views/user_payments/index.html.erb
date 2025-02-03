@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "User payments" %>
+
+<h1>User payments</h1>
+<br/>
+
+<div id="user_payments">
+  <% @user_payments.each do |user_payment| %>
+    <%= render user_payment %>
+    <p>
+      <%= link_to "Show this user payment", user_payment %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user payment", new_user_payment_path %>

@@ -1,0 +1,57 @@
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Cover Name</th>
+      <th>Type</th>
+      <th>Company Name</th>
+      <th>Description </th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @covers.each do |cover| %>
+      <tr>
+         <td><%= cover.cover_name %></td>
+           <td><%= cover.insurance_type %></td>
+        <td> <%= cover.insurance_company.company_name %> </td>
+           <td> <%= cover.description %> </td>
+        <td>
+          <%= link_to "Show", cover %>
+        </td>
+      
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+    <div class="form-group mb-3">
+    <%= form.label :cover_id, "Select cover"%>
+    <%= form.collection_select :cover_id, 
+    @covers, :id, :insurance_type,
+    { prompt: "Choose a cover" }, class:"form-control" %>
+  </div>
+
+  <br/>
+
+  <div class="form-group mb-3">
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id, class:"form-control" %>
+  </div>
+
+
+
+  <div class="form-group mb-3">
+    <%= form.label :amount_paid, style: "display: block" %>
+    <%= form.number_field :amount_paid, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :payment_mode, style: "display: block" %>
+    <%= form.text_field :payment_mode, class:"form-control" %>
+  </div>
+ <div>
+    <%= form.submit  class:'btn btn-secondary'%>
+  </div>

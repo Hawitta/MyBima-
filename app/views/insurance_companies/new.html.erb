@@ -1,0 +1,11 @@
+<% content_for :title, "New insurance company" %>
+
+<h1>New insurance company</h1>
+
+<%= render "form", insurance_company: @insurance_company %>
+
+<br>
+
+<div>
+  <%= link_to "Back to insurance companies", insurance_companies_path %>
+</div>
