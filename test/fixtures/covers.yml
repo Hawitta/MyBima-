@@ -2,10 +2,10 @@
 
 one:
   company_id: 1
-  type: 
+  category: 
   cover_name: MyString
 
 two:
   company_id: 1
-  type: 
+  category: 
   cover_name: MyString

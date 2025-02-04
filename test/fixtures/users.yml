@@ -3,7 +3,6 @@
 one:
   first_name: MyString
   last_name: MyString
-  string: MyString
   middle_name: MyString
   email: MyString
   id_number: MyString
@@ -13,7 +12,6 @@ one:
 two:
   first_name: MyString
   last_name: MyString
-  string: MyString
   middle_name: MyString
   email: MyString
   id_number: MyString
