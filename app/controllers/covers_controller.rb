@@ -3,7 +3,7 @@ class CoversController < ApplicationController
 
   # GET /covers or /covers.json
   def index
-    @covers = Cover.all
+    @covers = Cover.includes(:company).all
     @insurance_companies = InsuranceCompany.all
   end
 

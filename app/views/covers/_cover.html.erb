@@ -1,7 +1,7 @@
 <div id="<%= dom_id cover %>">
   <p>
     <strong>Company:</strong>
-    <%= cover.insurance_company.company_name %>
+    <%= cover.insurance_company.company_name || "No company assigned" %>
   </p>
 
   <p>

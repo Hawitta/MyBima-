@@ -17,7 +17,7 @@ class CoversControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cover" do
     assert_difference("Cover.count") do
-      post covers_url, params: { cover: { company_id: @cover.company_id, cover_name: @cover.cover_name, type: @cover.type } }
+      post covers_url, params: { cover: { company_id: @cover.company_id, cover_name: @cover.cover_name, category: @cover.category } }
     end
 
     assert_redirected_to cover_url(Cover.last)
@@ -34,7 +34,7 @@ class CoversControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cover" do
-    patch cover_url(@cover), params: { cover: { company_id: @cover.company_id, cover_name: @cover.cover_name, type: @cover.type } }
+    patch cover_url(@cover), params: { cover: { company_id: @cover.company_id, cover_name: @cover.cover_name, category: @cover.category } }
     assert_redirected_to cover_url(@cover)
   end
 
