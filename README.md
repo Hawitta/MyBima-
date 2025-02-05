@@ -1,24 +1,14 @@
-# README
+# 1. Clone the repository
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+git clone https://github.com/your-username/mybima.git
+cd mybima
 
-Things you may want to cover:
+# 2. Install dependencies
 
-* Ruby version
+bundle install
 
-* System dependencies
+# 3. Set Up Database
+A backup database has been provided, run the following command to copy to your project
 
-* Configuration
+cp backup.sqlite3 storage/development.sqlite3
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
