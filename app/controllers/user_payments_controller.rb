@@ -14,8 +14,16 @@ class UserPaymentsController < ApplicationController
   def new
     @user_payment = UserPayment.new
     @covers = Cover.all
-    session[:user_payment_step] ||= 1
-    render_step
+   
+    if session[:selected_cover_id].nil?
+      flash[:notice] = "Cover not selected."
+      redirect_to new_user_payment_path
+    else
+      @selected_cover = Cover.find(session[:selected_cover_id])
+      flash[:notice] = "Cover choice saved successfully."
+      redirect_to mpesa_path
+    end
+    
   end
 
   # GET /user_payments/1/edit
@@ -87,15 +95,9 @@ class UserPaymentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_payment_params
-      params.expect(user_payment: [ :user_id, :insurance_type, :cover_id, :amount_paid, :payment_mode, :date ])
+      params.expect(user_payment: [ :user_id, :cover_id, :amount_paid, :payment_mode ])
     end
 
-    def render_step
-      case session[:user_payment_step]
-      when 1 then render "user_payments/insurance_type"
-      when 2 then render "user_payments/insurance_cover"
-      when 3 then render "user_payments/personal_details"
-      when 4 then render "user_payments/make_payment"
-      end
-    end
+ 
+   
 end

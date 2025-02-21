@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @coverdetail %>
+
+<div>
+  <%= link_to "Edit this coverdetail", edit_coverdetail_path(@coverdetail) %> |
+  <%= link_to "Back to coverdetails", coverdetails_path %>
+
+  <%= button_to "Destroy this coverdetail", @coverdetail, method: :delete %>
+</div>

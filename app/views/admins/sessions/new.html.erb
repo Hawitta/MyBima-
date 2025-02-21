@@ -1,30 +1,40 @@
-<br/>
-<h2>Log in</h2>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
-<div class="container-lg">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group mb-3">
-    <%= f.label :email, class:"form-label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
-  </div>
-
-  <div class="form-group mb-3">
-    <%= f.label :password, class:"form-label" %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="container">
+<div class="animated-border-box-glow"> </div>
+<div class="animated-border-box">
+  <div class="frame">
+    <div class="nav">
+      <ul class"links">
+        <li class="signin-active">
+        <a class="btn">Sign in</a></li>
+      </ul>
     </div>
-  <% end %>
-<br/>
-  <div class="actions">
-    <%= f.submit "Log in", class:"btn btn-secondary" %>
-  </div>
-<% end %>
+    <div ng-app ng-init="checked = false">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: { class: "form-signin" }) do |f| %>
 
-<%= render "admins/shared/links" %>
+           <label for="email">Email</label>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-styling" %>
+
+          <label for="password">Password</label>
+          <%= f.password_field :password, autocomplete: "current-password", class:"form-styling" %>
+          
+          <label for="checkbox" >
+          <div class="btn-animate">
+          <%= f.submit "Log in", class:"btn-signin" %>
+          </div>
+				
+        <% end %>
+
+			
+      </div>
+      
+      <div class="forgot">
+        <a href="#">Forgot your password?</a>
+      </div>
+      
+   
+  </div>
+  </div>
 
 </div>

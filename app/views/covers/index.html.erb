@@ -25,6 +25,9 @@
      <p class="card-text"> <%= cover.insurance_company.company_name %> </p>
     <br/>
 
+  <%= button_to "Select Cover", selected_cover_path(cover), method: :post, class: "btn btn-success" %>
+
+
     <% if admin_signed_in? %>
     <p> <%= link_to "Show", cover, class:"btn btn-primary" %> </p>
     <% end %>

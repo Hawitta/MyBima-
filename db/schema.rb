@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_04_105138) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_20_113412) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -21,6 +21,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_04_105138) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "coverdetails", force: :cascade do |t|
+    t.integer "cover_id"
+    t.string "category"
+    t.string "optional"
+    t.integer "younger_age"
+    t.integer "older_age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "covers", force: :cascade do |t|
@@ -34,14 +44,26 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_04_105138) do
   end
 
   create_table "insurance_companies", force: :cascade do |t|
-    t.integer "shalala"
     t.string "company_name"
     t.string "logo"
     t.string "website"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "shalala"
     t.index ["shalala"], name: "index_insurance_companies_on_company_id"
+  end
+
+  create_table "mpesa_transactions", force: :cascade do |t|
+    t.string "checkout_request_id"
+    t.string "merchant_request_id"
+    t.string "phone_number"
+    t.decimal "amount"
+    t.string "response_code"
+    t.string "response_description"
+    t.string "customer_message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_payments", force: :cascade do |t|
@@ -49,7 +71,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_04_105138) do
     t.integer "cover_id"
     t.integer "amount_paid"
     t.string "payment_mode"
-    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

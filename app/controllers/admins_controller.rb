@@ -1,18 +1,37 @@
 class AdminsController < ApplicationController
-  before_action :set_admin, only: %i[ show edit update destroy ]
+  before_action :authenticate_admin!
+  layout 'admin'
 
   # GET /admins or /admins.json
   def index
-    @admins = Admin.all
+    @admin = current_admin # Assign for debugging
+
+    if current_admin
+      Rails.logger.debug "Admin logged in: #{current_admin.email}"
+    else
+      Rails.logger.debug "No admin logged in!"
+    end
+    render template: 'admins/dashboard/index'
   end
+
 
   # GET /admins/1 or /admins/1.json
   def show
+    @admin = current_admin 
+    render template: 'admins/dashboard/index',layout: "admin"
+
+  end
+
+  def dashboard
+    @admin = current_admin # Assign for debugging
+
+    render template: 'admins/dashboard/index',layout: "admin"
   end
 
   # GET /admins/new
   def new
     @admin = Admin.new
+    
   end
 
   # GET /admins/1/edit

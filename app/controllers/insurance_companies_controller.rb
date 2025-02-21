@@ -1,5 +1,14 @@
 class InsuranceCompaniesController < ApplicationController
-  before_action :set_insurance_company, only: %i[ show edit update destroy ]
+
+  before_action :set_layout
+  
+  def set_layout
+    if current_admin
+      self.class.layout "admin"
+    else
+      self.class.layout "application"
+    end
+  end
 
   # GET /insurance_companies or /insurance_companies.json
   def index
@@ -12,6 +21,7 @@ class InsuranceCompaniesController < ApplicationController
 
   # GET /insurance_companies/new
   def new
+    @admin = current_admin
     @insurance_company = InsuranceCompany.new
   end
 

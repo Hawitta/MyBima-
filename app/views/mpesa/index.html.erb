@@ -1,0 +1,33 @@
+<h1>Make a Payment</h1>
+
+<form action="/payments/process" method="post">
+<% if current_user %>
+<%= current_user.email %>
+<% else %>
+<p>User not logged in.</p>
+<% end %>
+
+  <br/>
+  <%= @selected_cover.cover_name %>
+
+  <br/>
+
+  <label for="amount">Amount:</label>
+  <input type="number" name="amount" required>
+
+  <label for="phone_number">Number:</label>
+  <input type="phone_number" name="phone_number" required>
+
+
+
+  <label for="method">Payment Method:</label>
+  <select name="method">
+    <option value="Mpesa">MPESA</option>
+    <option value="Paypal">PayPal</option>
+  </select>
+
+  <button type="submit">Pay Now</button>
+</form>
+
+
+

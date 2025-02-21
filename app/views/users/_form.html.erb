@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  
   <div>
     <%= form.label :first_name, style: "display: block" %>
     <%= form.text_field :first_name %>
@@ -49,4 +50,8 @@
   <div>
     <%= form.submit %>
   </div>
+  <br/>
+
+  <%= link_to "Make payment", new_user_payment_path %>
+
 <% end %>

@@ -1,51 +1,49 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">MyBima</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<div class="theme-loader">
+<div class="spinner">
+  <div class="spinner-bounce one"></div>
+  <div class="spinner-bounce two"></div>
+  <div class="spinner-bounce three"></div>
+</div>
+</div>
+<!-- Preloader End -->
 
-      <% if admin_signed_in? %>
-      <li class="nav-item">
-          <%= link_to "Home", root_path,class: "nav-link active" %>
-      </li>
-       
-      <li class="nav-item">
-      <%= link_to "Insurance Covers", covers_path, class:"nav-link" %>
-      </li>
-        <li class="nav-item">
-      <%= link_to "Explore Insurance", insurance_companies_path, class:"nav-link" %>
-        </li>
-      
+<!-- Header Area Start -->
+<div class="header__area two header__sticky">
+    <div class="custom__container">
+        <div class="header__area-menubar p-relative">
+            <div class="header__area-menubar-left">
+                <div class="header__area-menubar-left-logo two">
+                    <a href="#">
+              
+                    <img class="dark-n" src="logo-3.png" alt="Logo-image">
+                    <img class="light-n" src="logo-4.png" alt="Logo-image"></a>
+                </div>
+            </div>
+    <div class="header__area-menubar-center">
+                <div class="header__area-menubar-center-menu two menu-responsive">						
+<ul id="mobilemenu">
+<li class="menu-item">
+<%= link_to "Home", root_path %>
+</li>
+<li>
+<%= link_to "About Us", root_path %>
+<li>
+<%= link_to "Claims", root_path %>
+<li>
+<%= link_to "Contact Us", home_contact_us_path %>
+</li>
+<li>
+<% if current_admin %>
+<%= link_to "Admin", admins_dashboard_path %>
+<% else %>
+<%= link_to "Admin", new_admin_session_path %>
+<% end %>
 
-        <li class="nav-item">
-        <%= link_to "Sign Out ", destroy_admin_session_path, class:"nav-link", data: { turbo_method: :delete } %>
-      </li>
+</li>
 
-        <% else %>
-      <li class="nav-item">
-        <%= link_to "Admin login", new_admin_session_path, class:"nav-link" %>
-      </li>
-      
-      <li class="nav-item">
-      <%= link_to "Insurance Covers", covers_path, class:"nav-link" %>
-        </li>
-
-      </li>
-        <li class="nav-item">
-        <%= link_to "Apply", user_payments_insurance_type_path, class:"nav-link" %>
-      </li>
-      
-        
-      <% end %>
-       
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>    

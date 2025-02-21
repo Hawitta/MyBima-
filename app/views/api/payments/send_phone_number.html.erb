@@ -1,0 +1,17 @@
+<h1>Make a Payment</h1>
+<form action="/payments/process" method="post">
+  <label for="amount">Amount:</label>
+  <input type="number" name="amount" required>
+
+  <h4>  Paybill : </h4>
+  <h4>  Account number : </h4>
+
+
+  <label for="method">Payment Method:</label>
+  <select name="method">
+    <option value="mpesa">MPESA</option>
+    <option value="paypal">PayPal</option>
+  </select>
+
+  <button type="submit">Pay Now</button>
+</form>
