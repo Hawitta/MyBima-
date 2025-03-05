@@ -1,0 +1,48 @@
+<%= form_with(model: @signature, url: signatures_path, method: :post, multipart: true) do |form| %>
+
+<div class="signature-section">
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="check" value="" id="flexCheckDefault" required>
+<label class="form-check-label" for="flexCheckDefault">
+<p> I <b><i id="x2"></i></b>, on behalf of myself and the members of my family proposed for insurance, hereby declare that I have not withheld or misstated any particular matter. I understand that any misstatement or non-disclosure of any material information in this application may render the policy voidable at the option of Jubilee Health Insurance Limited. I also authorize Jubilee Health Insurance Limited to obtain from any of my dependents disclosure to Jubilee Health Insurance Limited or their representative the records relating to such current or previous medical history as may be required.</p>
+</label>
+</div>
+
+</div>
+</div>
+ <hr/> 
+ 
+<h3>Accept Terms and Conditions</h3>
+        <br/>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="consent-yes" required name="consent">
+        <label class="form-check-label" for="consent-yes">
+        <p> I <b><i id="x1"></i></b>, have read and accept the 
+        <a href="jubileeterms.php"><i>Jubilee Terms and Conditions</i></a>
+        </p>
+        </label>
+
+        <!-- CONSENT FORM --> 
+        <br/>
+          <% if current_user %>
+              <%= form.hidden_field :user_id, value: current_user.id %>
+            <% end %>
+        <%= form.label :signature,"Signature of the Main Member", style: "display: block" %>
+        <%= form.text_field :signature, required: true, id:"user_name"  %>
+
+        <br/>
+    
+        <label for="signatureCanvas">Sign below:</label><br>
+        <canvas id="signatureCanvas" width="400" height="200"></canvas> 
+
+        <div class="mb-3">
+        <button type="button" id="generateSignature" class="btn btn-primary">Generate Signature</button>
+        <button type="button" id="clearCanvas" class="btn btn-secondary">Clear</button>
+        </div>
+
+        <input type="hidden" id="signatureData" name="user[signature]">
+
+        <div class="d-flex justify-content-center">
+            <%= form.submit "Save Details" %>
+        </div>
+<% end %>

@@ -1,12 +1,25 @@
 class CoverdetailsController < ApplicationController
-  before_action :set_coverdetail, only: %i[ show edit update destroy ]
-
-  layout 'application'
-  # GET /coverdetails or /coverdetails.json
-  def index
-    @coverdetails = Coverdetail.all
+  before_action :set_layout
+  
+  def set_layout
+    if current_admin
+      self.class.layout "admin"
+    else
+      self.class.layout "application"
+    end
   end
 
+  # @cover = Cover.find(params[:id])
+  # @coverdetail = Coverdetail.find(params[:id])
+  def index
+    @coverdetail = Coverdetail.find(1)  # Find the Coverdetail with ID 16
+    @cover_name = @coverdetail.cover.cover_name  # Get the associated Cover's name
+
+    render template: 'coverdetails/cover_details'
+  end
+
+  def quote
+  end
   # GET /coverdetails/1 or /coverdetails/1.json
   def show
   end
@@ -14,6 +27,7 @@ class CoverdetailsController < ApplicationController
   # GET /coverdetails/new
   def new
     @coverdetail = Coverdetail.new
+    @covers = Cover.all
   end
 
   # GET /coverdetails/1/edit
@@ -26,10 +40,10 @@ class CoverdetailsController < ApplicationController
 
     respond_to do |format|
       if @coverdetail.save
-        format.html { redirect_to @coverdetail, notice: "Coverdetail was successfully created." }
+        format.html { redirect_to new_coverdetail_path, notice: "Cover detail was successfully created." }
         format.json { render :show, status: :created, location: @coverdetail }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to new_coverdetail_path, notice: "Cover detail was not successfully created." }  
         format.json { render json: @coverdetail.errors, status: :unprocessable_entity }
       end
     end

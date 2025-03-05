@@ -35,10 +35,10 @@ class InsuranceCompaniesController < ApplicationController
 
     respond_to do |format|
       if @insurance_company.save
-        format.html { redirect_to @insurance_company, notice: "Insurance company was successfully created." }
+        format.html { redirect_to new_insurance_company_path, notice: "Insurance company was successfully created." }
         format.json { render :show, status: :created, location: @insurance_company }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to new_insurance_company_path, notice: "Insurance company was not successfully created." }        
         format.json { render json: @insurance_company.errors, status: :unprocessable_entity }
       end
     end

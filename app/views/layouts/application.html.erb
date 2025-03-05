@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Mybima" %></title>
+    <title><%= content_for(:title) || "BimaLife - Securing Generations" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -15,66 +15,42 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon-1.png">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <!-- Custom Stylesheets -->
+  <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
- 
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-    
-    <%= stylesheet_link_tag "application", media: "all" %>
-
-	<!-- Start Meta -->
-	
-	<!-- Title of Site -->
-	<title>BimaLife - Securing Generations</title>
-
-<!-- Favicons -->
-
-
-<!-- Bootstrap CSS -->
-<link rel="icon" type="image/png" href="favicon-1.png">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<!-- Font Awesome CSS -->
-	<link rel="stylesheet" href="/css/all.css">
-	<!-- Animate CSS -->
-	<link rel="stylesheet" href="/css/animate.css">
-	<!-- Flaticon -->
-	<link rel="stylesheet" href="/font/flaticon.css">	
-	<!-- Swiper Bundle CSS -->
-	<link rel="stylesheet" href="/css/swiper-bundle.min.css">
-	<!-- Magnific Popup CSS -->
-	<link rel="stylesheet" href="/css/magnific-popup.css">
-	<!-- Mean Menu CSS -->
-	<link rel="stylesheet" href="/css/meanmenu.min.css">
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="/css/style.css"> 
+  <!-- FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
-<!-- Bootstrap JS -->
-<%= javascript_include_tag "https://code.jquery.com/jquery-3.7.0.min.js", defer: true %>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <!-- Bootstrap Icons (Ensure the file exists in /public/css/) -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <link rel="stylesheet" href="/css/meanmenu.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/font/flaticon.css">
 
-<%= javascript_include_tag 'bootstrap.min', 'data-turbo-track': 'reload' %>
-<!-- Magnific Popup JS -->
-<%= javascript_include_tag 'jquery.magnific-popup.min', 'data-turbo-track': 'reload' %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.magnific-popup/1.1.0/jquery.magnific-popup.min.js"></script>
 
-<!-- jQuery -->
-<%= javascript_include_tag 'jquery-3.7.0.min' %>
+<script src="https://js.stripe.com/v3/"></script>
+
+
+  <%= javascript_include_tag "signature", type: "module", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "stripe", type: "module", "data-turbo-track": "reload" %>
+
+
+
+  <!-- JavaScript -->
+  <%= javascript_importmap_tags %>
+  <%= javascript_include_tag 'jquery-3.7.0.min' %>
 <%= javascript_include_tag 'bootstrap.min' %>
 <%= javascript_include_tag 'jquery.counterup.min' %>
 <%= javascript_include_tag 'popper.min' %>
@@ -88,10 +64,33 @@
 
 
 
+  <!-- jQuery (Only Include Once) -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Other Scripts -->
 
 
-</head>
-
+ <style>
+       
+       canvas { 
+            background-color: #fff;
+              border-radius: 5px;
+        border: 2px solid red;
+        }
+        .signature-container {
+            margin-bottom: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+	    .accordion-button:not(.collapsed) {
+          background-color: #fff;
+	    }
+	    
+	</style>
   </head>
 
   <body>
@@ -106,5 +105,23 @@
     <%= yield %>
     </div>
 
+	<div class="footer__four" style="padding-top:0px;background:black;">
+		 
+	<div class="copyright__four">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<p>Copyright 2025  <a href="#">BimaLife</a> - All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<!-- Footer Area End -->
+	<!-- Scroll Btn Start -->
+	<div class="scroll-up scroll-two">
+		<svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" /> </svg>
+	</div>
+  
   </body>
 </html>

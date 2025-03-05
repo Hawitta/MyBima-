@@ -1,11 +1,127 @@
-<% content_for :title, "New user" %>
-
-<h1>New user</h1>
-
+<div class="services__details">
+<div class="container">
+<div class="row">
+<div class="col-12 lg-mb-50">
+   
+<!-- Form Begins -->
 <%= render "form", user: @user %>
 
-<br>
 
-<div>
-  <%= link_to "Back to users", users_path %>
+<!-- Beneficiary form -->
+<%= render 'users/beneficiary_form', beneficiary: @beneficiary %>
+  
+<!-- Dependant form -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color:white;color:#212529;">
+        STEP 3 : DEPENDANT(S) DETAILS
+        </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>To be completed if members family is applying for Health Insurance</p>
+            <h4>1. Dependant</h4>
+
+            <%= render 'users/dependant_form', dependant: @dependant %>
+            <br/>
+            <hr/>
+
+            <!-- Dependant form -->
+
+            <%= render 'users/dependant_form', dependant: @dependant %>
+            <br/>
+            <hr/>
+
+            <!-- Dependant form -->
+            <%= render 'users/dependant_form', dependant: @dependant %>
+            <br/>
+
+        </div>
+    </div>
 </div>
+
+
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingFour">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="background-color:white;color:#212529;">
+STEP 4: DECLARATIONS
+</button>
+</h2>
+<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<div class="row g-3"> 
+
+<div class="col-md-12 p-3">
+<div class="section">
+<%= render 'users/broker_form', broker: @broker %>
+
+<br/>
+</div>
+</div>
+<hr/>
+<div class="col-md-12 p-4"> 
+<h3>Declaration of Main Member</h3>
+<br/>
+
+    <div class="col-md-12 p-4">
+        <%= render 'users/signature_form', signature: @signature %>
+    </div>
+
+<input type="hidden" id="consent_date" name="consent_date" value="2025-02-24">
+</div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- Services Details End --> 
+
+<div class="d-flex justify-content-center">
+<%= link_to "Next", checkout_path %>
+</div>
+
+</div>
+<!-- Services Details End -->  
+
+
+<!-- Scroll Btn Start -->
+<div class="scroll-up scroll-two">
+<svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" /> </svg>
+</div>
+<!-- Scroll Btn End -->		
+<!-- Main JS -->
+
+  <%= javascript_include_tag 'signature', 'data-turbo-track': 'reload' %>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+.forEach(function (form) {
+form.addEventListener('submit', function (event) {
+if (!form.checkValidity()) {
+  event.preventDefault()
+  event.stopPropagation()
+}
+
+form.classList.add('was-validated')
+}, false)
+})
+})()
+
+
+
+// Initial call to set the value when the page loads
+</script>

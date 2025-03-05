@@ -1,0 +1,174 @@
+<div class="services__details">
+<div class="container">
+    <div class="row">
+        <div class="col-xl-8 col-lg-8 lg-mb-50">
+            <div class="services__details-left">
+                
+                
+            
+                <div class="services__details-left-content">
+                    <h4>Customise Your Cover</h4>
+                    <p>Health insurance provides financial protection to homeowners against damage or loss to their property and possessions due to unexpected events such as fire, theft, natural disasters, and other hazards.</p>
+                  
+                </div>
+                <form action="#"  method="POST">
+                <ul class="list-group" style="margin-bottom:20px;">
+                    <li class="list-group-item active  list-group-item-success">Select Your In-Patient Limit?</li>
+<li class="list-group-item"><input type="radio" name="branch_1_group_1" value="a1" onclick="changeContent(this.value)"> Ksh 250,000</li>
+<li class="list-group-item"><input type="radio" name="branch_1_group_1" value="a2" onclick="changeContent(this.value)"> KSh 350,000</li>
+<li class="list-group-item"><input type="radio" name="branch_1_group_1" value="a3" onclick="changeContent(this.value)"> Ksh 500,000</li>
+ </ul>
+
+            
+                
+                
+                
+                <ul class="list-group"  style="margin-bottom:20px;">
+<li class="list-group-item active  list-group-item-success">Cover is for who?</li>
+<li class="list-group-item"><input  type="radio" name="branch_1_group_2" value="a1" onclick="changeContent(this.value)"> Individual cost </li>
+<li class="list-group-item"><input  type="radio" name="branch_1_group_2" value="b1" onclick="changeContent(this.value)"> Family rate up to (M+4)
+Member, spouse + up to 3
+children</li>
+<li class="list-group-item"><input type="radio" name="branch_1_group_2" value="b2" onclick="changeContent(this.value)"> Family rate up to (M+5)
+Member, spouse + up to 4
+children</li>
+<li class="list-group-item"><input  type="radio" name="branch_1_group_2" value="b3" onclick="changeContent(this.value)"> Family rate up to (M+6)
+Member, spouse + up to 5
+children</li>
+
+        </ul>
+        
+         
+<div class="contact__two-right-form-item">
+                                  
+                                </div>
+         </form>       
+           
+</div>
+
+            
+                </div>
+        
+        <div class="col-xl-4 col-lg-4">
+            <div class="all__sidebar" style="top:0px;">
+            
+             <div class="all__sidebar-item">
+                    <div class="container">
+<h5>Quote Reference: <span id="quoteRef">SQW2490555</span></h5>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>In-Patient Limit</td>
+                <td id="inpatienttype">-</td>
+            </tr>
+            <tr>
+                <td>Individual Cost</td>
+                <td id="individualCost">-</td>
+            </tr>
+            <tr>
+                <td>Family Rate</td>
+                <td id="familyRate">-</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td id="total">-</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td id="tax">-</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+<div class="important-info">
+    <div>IMPORTANT INFORMATION</div>
+    <div>Terms & Conditions</div>
+</div>
+
+
+<div class="contact__two-right-form-item">
+                                    <button class="btn-one" type="submit"><i class="flaticon-insurance"></i> SAVE MY QUOTE </button>
+                                </div><HR>
+                                
+                        
+    <div class="all__sidebar-item-download">
+                            
+                        <button class="btn-one" type="submit">
+                        <i class="flaticon-insurance">           
+                        </i>  
+                         <%= link_to "Next Step", new_user_path %>
+                         </button>     
+
+                    </div>							
+<div class="reviews">
+    <div>Customers rate Health Cover</div>
+    <div>Based on 4,977 reviews.</div>
+    <div>Powered by BimaLife</div>
+     <div class="header__area-menubar-left-logo two">
+                <a href="#"><img class="dark-n" src="logo-3.png" alt="Logo-image"><img class="light-n" src="logo-4.png" alt="Logo-image"></a>
+            </div>
+</div>
+</div>
+                
+         </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+<!-- Services Details End -->    
+
+<!-- Scroll Btn End -->
+
+<script>
+
+function changeContent(value) {
+    let inpatientType = document.getElementById("inpatienttype");
+    let individualCost = document.getElementById("individualCost");
+    let familyRate = document.getElementById("familyRate");
+    let total = document.getElementById("total");
+    let tax = document.getElementById("tax");
+
+    let price = 0;
+
+    switch (value) {
+        case 'a1':
+            inpatientType.innerText = "Ksh 250,000";
+            price = 6200;
+            break;
+        case 'a2':
+            inpatientType.innerText = "Ksh 350,000";
+            price = 8200;
+            break;
+        case 'a3':
+            inpatientType.innerText = "Ksh 500,000";
+            price = 11400;
+            break;
+        case 'b1':
+            familyRate.innerText = "-";
+            price += 5000;
+            break;
+        case 'b2':
+            familyRate.innerText = "Family Rate (M+4)";
+            price += 10000;
+            break;
+        case 'b3':
+            familyRate.innerText = "Family Rate (M+5)";
+            price += 12000;
+            break;
+    }
+
+    total.innerText = `Ksh ${price}`;
+    tax.innerText = `Ksh ${(price * 0.16).toFixed(2)}`;
+}
+</script>
+

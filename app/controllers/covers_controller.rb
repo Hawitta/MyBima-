@@ -1,5 +1,6 @@
 class CoversController < ApplicationController
   before_action :set_layout
+  before_action :set_insurance_companies, only: [:new, :create, :edit, :update]
   
   def set_layout
     if current_admin
@@ -14,6 +15,8 @@ class CoversController < ApplicationController
     @covers = Cover.all
     @insurance_companies = InsuranceCompany.all
   end
+
+
 
   def selected
     cover = Cover.find_by(params[:id]) # Find the selected cover by ID
@@ -54,10 +57,10 @@ class CoversController < ApplicationController
 
     respond_to do |format|
       if @cover.save
-        format.html { redirect_to @cover, notice: "Cover was successfully created." }
-        format.json { render :show, status: :created, location: @cover }
+        format.html { redirect_to new_cover_path, notice: "Cover was successfully created"}
+        
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to new_cover_path, notice: "Cover was not created." }
         format.json { render json: @cover.errors, status: :unprocessable_entity }
       end
     end
@@ -87,6 +90,10 @@ class CoversController < ApplicationController
   end
 
   private
+  def set_insurance_companies
+    @insurance_companies = InsuranceCompany.all
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_cover
       @cover = Cover.find(params.expect(:id))

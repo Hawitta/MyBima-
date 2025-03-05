@@ -4,7 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Admin</title>
+    <title> BimaLife Admin</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
@@ -15,10 +19,13 @@
     <link rel="stylesheet" href="/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="/vendors/owl-carousel-2/owl.theme.default.min.css">
     <!-- End plugin css for this page -->
+
    
     <link rel="stylesheet" href="/css/dashboard.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/dashboard/favicon.png" />
+    <%= javascript_include_tag "application", type:"module", "data-turbo-track": "reload" %>
+
   </head>
   <body>
   <div class="container-scroller">
@@ -93,7 +100,7 @@
   
 
   <li class="nav-item menu-items">
-    <%= link_to new_cover_path, class: "nav-link menu-link" do %>
+    <%= link_to new_coverdetail_path, class: "nav-link menu-link" do %>
       <span class="menu-icon">
       <i class="mdi mdi-playlist-play"></i>
       </span>
@@ -310,9 +317,10 @@
             <div class="dropdown-divider"></div>
             <p class="p-3 mb-0 text-center">See all notifications</p>
           </div>
+
         </li>
         <li class="nav-item dropdown">
-        <%= button_to "Sign Out", destroy_admin_session_path, class: "btn btn-danger", data: { turbo_method: :delete } %>
+        <%= button_to "Sign Out", destroy_admin_session_path, method: :delete, data: { turbo: "true" } %>
 
         </li>
       </ul>
@@ -321,8 +329,9 @@
       </button>
     </div>
   </nav>
+  
+<%= yield %> 
 
-<%= yield %>
 
 </body>
 </html>

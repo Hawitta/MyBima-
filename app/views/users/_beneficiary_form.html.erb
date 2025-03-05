@@ -1,0 +1,73 @@
+  <%= form_with model: (beneficiary || Beneficiary.new), url: beneficiaries_path, method: :post do |form| %>
+    <% if @beneficiary.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(beneficiary.errors.count, "error") %> prohibited this user from being saved:</h2>
+  
+        <ul>
+          <% beneficiary.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color:white;color:#212529;">
+        STEP 2 : PARTICULARS OF BENEFICIARY OF LAST EXPENSE COVER
+        </button>
+    </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+          <div class="row g-3">
+            <% if current_user %>
+              <%= form.hidden_field :user_id, value: current_user.id %>
+            <% end %>
+
+              <div class="col-md-6">
+              <%= form.label :surname, "Surname", style: "display: block" %>
+                <%= form.text_field :surname, class:"form-control", required: true%>
+              </div>
+
+              <div class="col-md-6">
+              <%= form.label :first_name, "Other Names", style: "display: block" %>
+                <%= form.text_field :first_name,class:"form-control", required: true %>
+                </div>
+
+              <div class="col-md-6">
+              <%= form.label :relationship, "Relationship to applicant", style: "display: block" %>
+              <%= form.collection_select :title, 
+            [['Father', 'Father'],['Mother', 'Mother'],['Son', 'Son'],['Daughter', 'Daughter'],['Grandfather','Grandfather'],
+            
+            ['Grandmother','Grandmother'],['Uncle','Uncle'],['Aunt','Aunt']], 
+            :last,
+            :first, 
+            { prompt: "Select Relation" }, class:"form-control", required: true %>
+
+              </div>
+
+              <div class="col-md-6">
+              <%= form.label :id_no, "ID Number", style: "display: block" %>
+                  <%= form.text_field :id_no, class:"form-control", required: true  %>
+              </div>
+
+              <div class="col-md-6">
+              <%= form.label :phone_number, style: "display: block" %>
+                  <%= form.number_field :phone_number, class:"form-control", required: true %>
+              </div>
+
+              <div class="col-md-6">
+              <%= form.label :postal_address, style: "display: block" %>
+                  <%= form.number_field :postal_address,class:"form-control", required: true %>
+              </div>
+
+              <div class="d-flex justify-content-center">
+              <%= form.submit "Save Details", class:"button" %>
+            </div>
+   
+          </div>
+        </div>
+    </div>
+</div>
+<% end %>
+

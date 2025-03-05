@@ -13,23 +13,32 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @beneficiary = Beneficiary.new
+    @dependant = Dependant.new
+    @broker = Broker.new
+    @signature = Signature.new
   end
 
   # GET /users/1/edit
   def edit
   end
 
+  def checkout
+  end
+
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-   
+
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to @user, notice: "User was successfully created." }
+        if @user.attached_id.attached?
+          format.html { redirect_to new_user_path, notice: "User was successfully created." }
+        end
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to new_user_path, notice: "User was not successfully created." }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -66,6 +75,8 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.expect(user: [ :first_name, :last_name, :middle_name, :email, :id_number, :phone_number, :kra_pin ])
+      params.expect(user: [ :title, :surname, :first_name, :gender, :dob, :nationality,
+      :id_number, :attached_id, :email, :phone_number, :sha, :marital_status, :occupation,
+      :employer_name, :kra_pin, :attached_kra, :postal_address, :home_address, :signature ])
     end
 end

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @broker %>
+
+<div>
+  <%= link_to "Edit this broker", edit_broker_path(@broker) %> |
+  <%= link_to "Back to brokers", brokers_path %>
+
+  <%= button_to "Destroy this broker", @broker, method: :delete %>
+</div>

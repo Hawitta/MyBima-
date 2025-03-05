@@ -131,7 +131,7 @@ body {
   font-family: var(--body-font);
   color: var(--body-color);
   font-size: 16px;
-  line-height: 28.8px;
+  height: 100%;
   font-weight: 400;
 }
 
@@ -201,6 +201,7 @@ input[type=submit] {
   padding: 17px 40px;
 }
 
+
 button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
@@ -220,7 +221,6 @@ input[type=submit]:focus {
 }
 
 input[type=text],
-input[type=file],
 input[type=email],
 input[type=url],
 input[type=password],
@@ -246,7 +246,6 @@ textarea {
 }
 
 input[type=text]:focus,
-input[type=file]:focus,
 input[type=email]:focus,
 input[type=url]:focus,
 input[type=password]:focus,
@@ -264,6 +263,7 @@ input[type=color]:focus,
 textarea:focus {
   color: var(--text-heading-color);
   outline: none;
+
   box-shadow: none;
   border-color: var(--primary-color-1);
 }
@@ -720,6 +720,8 @@ h6 {
   --heading-font: "Outfit", sans-serif;
   --text-white: #FFFFFF;
   --bg-white: #FFFFFF;
+  --bs-accordion-btn-active-bg: #e7f1ff !important;  /* Light blue */
+  --bs-accordion-btn-active-color: white !important;
   --btn-white: #FFFFFF;
   --border-white: #FFFFFF;
   --primary-color-1: #00a78c;
@@ -6321,7 +6323,9 @@ h6 {
 ==========================================================================*/
 .services__two {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  height: 70vh;
+
 }
 .services__two-title {
   text-align: center;
@@ -6334,14 +6338,15 @@ h6 {
   position: relative;
   z-index: 9;
   margin-top: 46px;
+  height: 60vh;
 }
 .services__two-item::before {
   content: "";
   position: absolute;
   left: 50%;
-  top: -16px;
-  width: 213px;
-  height: 100%;
+  top: -10px;
+  width: 180px;
+  height: auto;
   background-image: url("/shape/services-4.png");
   background-repeat: no-repeat;
   transform: translateX(-50%);
@@ -6366,6 +6371,7 @@ h6 {
 }
 .services__two-item-content {
   margin-top: 37px;
+  
 }
 .services__two-item-content h4 {
   margin-bottom: 15px;
@@ -14382,3 +14388,12 @@ h6 {
     padding-left: 8px;
   }
 }/*# sourceMappingURL=style.css.map */
+
+
+.stripe-input {
+  padding: 10px;
+  border: 1px solid #ced4da;  /* Bootstrap default input border */
+  border-radius: 4px;
+  background-color: #fff;
+  width: 100%;
+}

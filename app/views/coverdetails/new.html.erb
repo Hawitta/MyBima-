@@ -1,11 +1,23 @@
-<% content_for :title, "New coverdetail" %>
+<!-- partial -->
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title"> Update Cover Details  </h3>
+    
+    </div>
+    <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title"></h4>
+            
+            <%= render "form", cover_detail: @cover_detail %>
+            
+          </div>
+        </div>
+      </div>
+      </div>
 
-<h1>New coverdetail</h1>
-
-<%= render "form", coverdetail: @coverdetail %>
-
-<br>
-
-<div>
-  <%= link_to "Back to coverdetails", coverdetails_path %>
-</div>
+      
+            
+    

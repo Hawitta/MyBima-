@@ -1,0 +1,69 @@
+<%= form_with(model: @dependant, url: dependants_path, method: :post, multipart: true) do |form| %>
+    <% if @dependant.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(dependant.errors.count, "error") %> prohibited this user from being saved:</h2>
+  
+        <ul>
+          <% dependant.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row g-3"> 
+        <% if current_user %>
+              <%= form.hidden_field :user_id, value: current_user.id %>
+            <% end %>
+
+        <div class="col-md-6"> 
+        <!-- DEPENDANT(S) DETAILS -->
+        <%= form.label :surname, style: "display: block" %>
+            <%= form.text_field :surname, class:"form-control"%>
+        </div>
+
+        <div class="col-md-6"> 
+        <%= form.label :first_name,"Other Names", style: "display: block" %>
+            <%= form.text_field :first_name, class:"form-control"%>
+        </div>
+
+        <div class="col-md-3"> 
+            <%= form.label :dob,"Date of Birth", style: "display: block" %>
+            <%= form.date_field :dob %>
+        </div>
+
+        <div class="col-md-3">
+
+        <%= form.label :blood_group, "Blood Group", style: "display: block" %>
+        <%= form.collection_select :blood_group, 
+        [['A+', 'A+'],['A-', 'A-'],['B+', 'B+'],['B-', 'B-'],['O+','O+'],
+        
+        ['O-','O-'],['AB+','AB+'],['AB-','AB-']], 
+        :last,
+        :first, 
+        { prompt: "Select" }, class:"form-control", required: true %>
+        </div>
+
+        <div class="col-md-6"> 
+            <%= form.label :id_no, "ID Number/Birth Certificate No", style: "display: block" %>
+            <%= form.text_field :id_no , class:"form-control" %>
+        </div>
+
+        <div class="col-md-6">
+        <%= form.label :relationship, style: "display: block" %>
+
+            <%= form.collection_select :relationship, 
+        [['Father', 'Father'],['Mother', 'Mother'],['Son', 'Son'],['Daughter', 'Daughter'],['Grandfather','Grandfather'],
+        
+        ['Grandmother','Grandmother'],['Uncle','Uncle'],['Aunt','Aunt']], 
+        :last,
+        :first, 
+        { prompt: "Select Relation" }, class:"form-control", required: true %>
+        </div>
+
+        <div class="d-flex justify-content-center">
+        <%= form.submit "Save Dependant Details", class:"button" %>
+        </div>
+    </div>
+
+  <% end %>

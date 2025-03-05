@@ -1,0 +1,32 @@
+<div id="<%= dom_id stripe %>">
+  <p>
+    <strong>User:</strong>
+    <%= stripe.user_id %>
+  </p>
+
+  <p>
+    <strong>Stripe payment:</strong>
+    <%= stripe.stripe_payment_id %>
+  </p>
+
+  <p>
+    <strong>Card brand:</strong>
+    <%= stripe.card_brand %>
+  </p>
+
+  <p>
+    <strong>Last 4:</strong>
+    <%= stripe.last_4 %>
+  </p>
+
+  <p>
+    <strong>Card fingerprint:</strong>
+    <%= stripe.card_fingerprint %>
+  </p>
+
+  <p>
+    <strong>Paid at:</strong>
+    <%= stripe.paid_at %>
+  </p>
+
+</div>

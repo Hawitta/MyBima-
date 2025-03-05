@@ -1,0 +1,44 @@
+ <%= form_with(model: @broker, url: brokers_path, method: :post, multipart: true) do |form| %>
+  <% if @broker.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+        <h3>Broker Declaration</h3>
+        <br/>
+        <p>I hereby declare that I explained the benefits of this application and that the applicant is aware of the membership terms and conditions of Jubilee Health Insurance LIMITED.</p>
+          <% if current_user %>
+              <%= form.hidden_field :user_id, value: current_user.id %>
+            <% end %>
+
+        <div class="m-3">  
+        <%= form.label :broker_name, style: "display: block" %>
+        <%= form.text_field :broker_name,id:"broker_name", readonly:true, value:"Bima Life Insurance Agency Limited", class:"form-control" %>
+        </div>
+
+        <%= form.hidden_field :trading_as, value: "Bima Life Insurance Agency Limited", readonly: true, id:"broker_trading_as" %>
+        <%= form.hidden_field :pin_no, value: "P052330326N", readonly: true, id:"broker_pin_no" %>
+        <%= form.hidden_field :email, value: "info@bimalife.com", readonly: true, id:"broker_email" %>
+
+        <div class="m-3">
+        <%= form.label :unit_name, style: "display: block" %>
+        <%= form.text_field :unit_name , id:"broker_unit_name", class:"form-control" %>
+        </div>
+
+        <div class="m-3">
+        <%= form.label :signature, "Signature of Intermediary/Broker", style: "display: block" %>
+        <%= form.text_field :signature, id:"broker_signature", value:"NA", class:"form-control" %>
+        </div>
+      
+        <br/>
+        
+        <div class="d-flex justify-content-center">
+            <%= form.submit "Save Details" %>
+        </div>
+<% end %>

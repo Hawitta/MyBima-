@@ -1,0 +1,11 @@
+<% content_for :title, "New dependant" %>
+
+<h1>New dependant</h1>
+
+<%= render "form", dependant: @dependant %>
+
+<br>
+
+<div>
+  <%= link_to "Back to dependants", dependants_path %>
+</div>

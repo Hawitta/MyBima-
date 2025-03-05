@@ -1,0 +1,12 @@
+<% content_for :title, "Editing stripe" %>
+
+<h1>Editing stripe</h1>
+
+<%= render "form", stripe: @stripe %>
+
+<br>
+
+<div>
+  <%= link_to "Show this stripe", @stripe %> |
+  <%= link_to "Back to stripes", stripes_path %>
+</div>

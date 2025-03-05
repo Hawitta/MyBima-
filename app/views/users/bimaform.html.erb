@@ -1,0 +1,481 @@
+<!-- Services Details Start -->
+<div class="services__details">
+   <div class="container">
+       <div class="row">
+           <div class="col-12 lg-mb-50">
+               <div class="services__details-left">
+                    
+                   <div class="services__details-left-content">
+                       <h4>DETAILS OF THE INSURED</h4>
+                     
+                   </div>
+               
+                       <form action="#">
+                       <div class="form-container">
+          <ul class="progress-bar" style="display: none;">
+       <li class="active"><span>Details of Main Applicant</span></li>
+       <li><span>Beneficiary Details</span></li>
+       <li><span>Dependants Details</span></li>
+       <li><span>Jubilee Health Insurance Consent</span></li>
+       <li><span>Declaration</span></li>
+   </ul>
+
+
+   <div id="step1" class="step active">
+       <!-- Step 1 Content -->
+<div class="form-container">
+   <p>Kindly complete all questions in full. Incomplete application forms cannot be processed. Please read carefully and fill out the entire form in BLOCK LETTERS. Attach the following:</p>
+   <ul>
+       <li>Birth certificate/notification (for children below 18 years).</li>
+       <li>A copy of your PIN Card and ID/Passport.</li>
+   </ul>
+   <h3 >DETAILS OF MAIN APPLICANT</h3>
+   <p>*All names should be captured as shown in ID/Passport and Birth Certificate for child dependants.</p>
+   <div class="row">
+           <div class="col-6">
+               
+   <div class="form-group">
+       <label for="surname">Surname:</label>
+       <input type="text" id="surname" name="surname" Placeholder="Surname" class="form-control">
+   </div>
+   
+   <div class="form-group">
+       <label for="other-names">Other Names:</label>
+       <input type="text" id="other-names" name="other-names" placeholder="Other Names" class="form-control">
+   </div> 
+   
+   
+   <div class="form-group">
+       <label for="id-no">ID No.:</label> 
+       <input type="text" id="id-no" name="id-no" placeholder="National ID No." class="form-control">
+   </div> 
+      <div class="form-group">
+<label for="nationalid">Attach National ID</label>
+<input type="file" class="form-control-file" id="nationalid">
+</div>
+
+
+   <div class="form-group">
+       <label for="marital-status">Marital Status:</label> 
+       <select  id="marital-status" name="marital-status" class="form-control">
+           <option>Married</option>
+           <option>Single</option>
+       </select>
+   </div> 
+    
+    
+   <div class="form-group">
+       <label for="date-of-birth">Date of Birth:</label> 
+       <input type="date" id="date-of-birth" name="date-of-birth" placeholder="Date of Birth">
+   </div>
+   
+   <div class="form-group">
+       <label for="occupation">Occupation:</label>
+       <input type="text" id="occupation" name="occupation" placeholder="Occupation">
+   </div>
+   
+   
+   <div class="form-group">
+       <label for="postal-address">Postal Address:</label>
+       <textarea type="text" id="postal-address" name="postal-address" >
+           </textarea>
+   </div>
+   
+ 
+   
+   
+   </div>
+   
+   <div class="col-6">
+       
+       
+   <div class="form-group">
+       <label for="title">Title:</label>  
+       <select id="title" name="title" class="form-control">
+           <option>Mr.</option>
+           <option>Mrs.</option>
+           <option>Dr.</option>
+           <option>Ms.</option>
+           <option>Prof.</option>
+           <option>Eng.</option>
+       </select>
+   </div> 
+     
+   <div class="form-group">
+       <label for="mobile-no">Mobile No.:</label>
+       <input type="tel" id="mobile-no" name="mobile-no" placeholder="Mobile Number">
+   </div> 
+   
+   
+   <div class="form-group">
+       <label for="email">Email:</label> 
+       <input type="email" id="email" name="email" plaholder="Email Address">
+   </div> 
+   <div class="form-group">
+       <label for="pin-no">PIN No.:</label> 
+       <input type="text" id="pin-no" name="pin-no" placeholder="KRA PIN Number">
+   </div> 
+    <div class="form-group">
+<label for="krapin">Attach Your PIN</label>
+<input type="file" class="form-control-file" id="krapin">
+</div>
+
+
+   
+   <div class="form-group">
+       <label for="gender">Gender:</label> 
+       <input type="radio" id="male" name="gender" value="male">
+       <label class="radio-label" for="male">Male</label>
+       <input type="radio" id="female" name="gender" value="female">
+       <label class="radio-label" for="female">Female</label>
+   </div> 
+   
+   
+   <div class="form-group">
+       <label for="nhif-no">SHIF / NHIF No.:</label> 
+       <input type="text" id="nhif-no" name="nhif-no" placeholder="SHIF Number">
+   </div> 
+   
+   <div class="form-group">
+       <label for="employer-name">Employer Name:</label> 
+       <input type="text" id="employer-name" name="employer-name" placeholder="If applicable">
+   </div> 
+   
+   <div class="form-group">
+       <label for="nationality">Nationality:</label> 
+       <input type="text" id="nationality" name="nationality">
+   </div> 
+   
+   <div class="form-group">
+       <label for="home-address">Home Address:</label>  
+       
+       <textarea type="text" id="home-address" name="home-address">
+           </textarea>
+   </div> 
+   
+   
+   
+   
+   </div>
+   
+</div>
+
+       
+       
+       <div class="buttons">
+           <button onclick="nextStep(2)">Next</button>
+       </div>
+   </div>
+
+   <div id="step2" class="step">
+       <!-- Step 2 Content -->
+        <div class="form-container two">
+   <h3 style="color: red;">PARTICULARS OF BENEFICIARY OF LAST EXPENSE COVER</h3>
+   
+   <div class="form-group">
+       <label for="name-in-full">Name in Full:</label>
+       <input type="text" id="name-in-full" name="name-in-full" style="width: 100%;">
+   </div>
+   <div class="form-group-half">
+       <div>
+           <label for="relationship">Relationship:</label>
+           <input type="text" id="relationship" name="relationship">
+       </div>
+       <div>
+           <label for="id-or-pp-no">ID or PP No.:</label>
+           <input type="text" id="id-or-pp-no" name="id-or-pp-no">
+       </div>
+   </div>
+   <div class="form-group-half">
+       <div>
+           <label for="mobile-no">Mobile No.:</label>
+           <input type="tel" id="mobile-no" name="mobile-no">
+       </div>
+       <div>
+           <label for="postal-address">Postal Address:</label>
+           <input type="text" id="postal-address" name="postal-address">
+       </div>
+   </div>
+</div>
+
+       
+       
+       
+       <div class="buttons">
+           <button onclick="prevStep(1)">Previous</button>
+           <button onclick="nextStep(3)">Next</button>
+       </div>
+   </div>
+
+   <div id="step3" class="step">
+       <!-- Step 3 Content -->
+        <div class="form-container three">
+   <h3 style="color: red;">DEPENDANT(S) DETAILS</h3>
+   <p>To be completed if members family is applying for Health Insurance</p>
+   
+   <table>
+       <thead>
+           <tr>
+               <th>Name in full</th>
+               <th>Date of birth (day/month/year)</th>
+               <th>Identity card no. / Birth certificate no. / Birth notification no.</th>
+               <th>+Blood Group</th>
+               <th>Relationship to member</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+               <td><input type="text"></td>
+               <td><input type="date"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+           </tr>
+           <tr>
+               <td><input type="text"></td>
+               <td><input type="date"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+           </tr>
+           <tr>
+               <td><input type="text"></td>
+               <td><input type="date"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+           </tr>
+           <tr>
+               <td><input type="text"></td>
+               <td><input type="date"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+           </tr>
+           <tr>
+               <td><input type="text"></td>
+               <td><input type="date"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+           </tr>
+       </tbody>
+   </table>
+</div>  
+       <!-- Add other fields as needed -->
+       <div class="buttons">
+           <button onclick="prevStep(2)">Previous</button>
+           <button onclick="nextStep(4)">Next</button>
+       </div>
+   </div>
+
+   <div id="step4" class="step">
+       <!-- Step 4 Content -->
+        <div class="form-container four">
+   <h3>JUBILEE HEALTH INSURANCE CONSENT</h3>
+   <p>Jubilee Health Insurance Ltd ("Jubilee/The Company/We/us") respects the privacy and protects the personal and sensitive personal data of its prospective and existing clients and complies with the Data Protection Act, 2019 and The Data Protection Regulations, 2021.</p>
+   <p>The personal and sensitive data requested will be used for the provision of quotations, administration of and/or any services relating to the medical insurance policy you are seeking to place with Jubilee Health or already have with us. All the information provided by you will be treated as confidential and will only be shared with third parties who we believe will benefit and treated in accordance with the requirement of the Data Protection Act and its Regulations.</p>
+   <p>Your personal/sensitive personal data may be transferred outside Kenya through cross-border transfer of data, and in line with this, further consent is hereby sought from you for this purpose. Appropriate data protection safeguards will be put in place prior to such transfer. For more details about the processing or performance of a contract, implementation of pre-contractual measures at a distance, compliance with a legal obligation, protection of vital interests of the data subject or another natural person, performance of a task carried out in the public interest or in exercise of official authority vested in the controller, or the purposes of legitimate interests pursued by the Data Controller or a third party, please visit our Privacy Notice at <a href="https://www.jubileehelthcare.com/en/privacy-policy/">https://www.jubileehelthcare.com/en/privacy-policy/</a></p>
+   <p>Under the conditions defined by the Data Protection Act 2019 and Data Protection Regulations, you have the right to:</p>
+   <ol>
+       <li>Access your personal data and information on the processing (processing purposes, categories of personal data concerned, recipients or categories of recipients to whom the personal data have been or will be disclosed, etc.).</li>
+       <li>Request rectification of inaccurate personal data concerning you.</li>
+       <li>Receive the personal data provided to Jubilee Health in a structured, commonly used and legible format. This shall be done where technically feasible.</li>
+       <li>Object to the processing of your personal data.</li>
+       <li>Names, Kamba, or by emailing privacy@jubileehelthcare.com.</li>
+       <li>Request us to transfer your personal data to another Data Controller.</li>
+       <li>Request erasure of your personal data.</li>
+       <li>At any time, change your personal data and revoke your consent for the processing. You have the right to appear at a third party (e.g., a relative, friend, lawyer, etc.) to lodge a complaint against us if you feel we have failed to comply with the above requirements.</li>
+       <li>Withdraw your consent to the processing activities at any time which may affect the services we provide to you or may result in termination of the policy.</li>
+   </ol>
+   <p>We reserve the right not to send you any emails or personal data in some circumstances, e.g., if we do, we will write you out and tell you the reason why, as described in Regulation 12(6) and Regulation 12(4) of the Data Protection (General) Regulations, 2021.</p>
+   <p>We require your explicit consent for the processing of your personal and sensitive personal data outlined above. Without this consent, Jubilee Health will not be in a position to process your data, provide the quoted service(s) you are seeking.</p>
+   <p>The consent below needs to be completed by you as the policyholder. This consent will be valid for the entire duration of the policy, unless it is changed or revoked at any time. Where the policy requires approval of personal and sensitive personal data of a dependent(s), (i.e., spouse, sibling, parents), who are over 18 years of age, the consent sign below will be deemed to be their consent too.</p>
+   <p>A parent or guardian should complete the consent for any member who is under the age of eighteen (18). If you accept the above, please sign and check the "I consent" box below.</p>
+
+   <div class="checkbox-group">
+       <input type="radio" id="consent-yes" name="consent" value="yes">
+       <label for="consent-yes">I consent</label>
+   </div>
+   <div class="checkbox-group">
+       <input type="radio" id="consent-no" name="consent" value="no">
+       <label for="consent-no">I do not consent</label>
+   </div>
+
+   <div class="signature-section">
+       <div>
+           <label for="name">Name:</label>
+           <input type="text" id="name" name="name">
+       </div>
+       <div>
+           <label for="signature">Signature:</label>
+           <input type="text" id="signature" name="signature">
+       </div>
+       <div>
+           <label for="date">Date:</label>
+           <input type="date" id="date" name="date">
+       </div>
+   </div>
+</div>
+
+      
+       <!-- Add consent checkboxes and signature fields as needed -->
+       <div class="buttons">
+           <button onclick="prevStep(3)">Previous</button>
+           <button onclick="nextStep(5)">Next</button>
+       </div>
+   </div>
+
+   <div id="step5" class="step">
+       <!-- Step 5 Content -->
+    
+             <div class="form-container five">
+   <h3>DECLARATION OF MAIN MEMBER</h3>
+   <p>I, on behalf of myself and the members of my family proposed for insurance, hereby declare that I have not withheld or misstated any particular matter that I understand that any misstatement or non-disclosure of any material information in this application may render the policy voidable at the option of Jubilee Health Insurance Limited. I also authorize Jubilee Health Insurance Limited to obtain from any of my dependants disclosure to Jubilee Health Insurance Limited or their representative the records relating to such current or previous medical history as may be required by Jubilee Health Insurance Limited to receive benefits from such records and undertake to assist in obtaining such information.</p>
+
+   <div class="signature-section">
+       <div>
+           <label for="name">Name:</label>
+           <input type="text" id="name" name="name">
+       </div>
+       <div>
+           <label for="signature">Signature:</label>
+           <input type="text" id="signature" name="signature">
+       </div>
+       <div>
+           <label for="date">Date:</label>
+           <input type="date" id="date" name="date">
+       </div>
+   </div>
+
+   <h3>INTERMEDIARY/BROKER DECLARATION</h3>
+   <p>I hereby declare that I explained the benefits of this application and that the applicant is aware of the membership terms and conditions of Jubilee Health Insurance LIMITED.</p>
+
+   <div class="intermediary-section">
+       <label for="broker-name">Full name of Intermediary/Broker:</label>
+       <input type="text" id="broker-name" name="broker-name">
+       
+       <label for="trading-as">Trading as:</label>
+       <input type="text" id="trading-as" name="trading-as">
+       
+       <label for="pin-no">PIN No.:</label>
+       <input type="text" id="pin-no" name="pin-no">
+       
+       <label for="email">Email:</label>
+       <input type="text" id="email" name="email">
+       
+       <label for="broker-signature">Signature of Intermediary/Broker:</label>
+       <input type="text" id="broker-signature" name="broker-signature">
+       
+       <label for="broker-date">Date:</label>
+       <input type="date" id="broker-date" name="broker-date">
+       
+       <label for="unit-name">Unit's Name:</label>
+       <input type="text" id="unit-name" name="unit-name">
+   </div>
+</div>
+       
+                       <div class="col-md-12 mb-30">
+                                   <div class="contact__two-right-form-item">
+                                       <button class="btn-one" type="submit">Submit Message </button>
+                                   </div>
+                               </div>
+                               
+                               
+    
+     <!-- Add declaration fields as needed -->
+       <div class="buttons">
+           <button onclick="prevStep(4)">Previous</button>
+           <button onclick="submitForm()">Submit</button>
+       </div>
+   </div>
+</div>
+
+
+
+
+                               
+                   
+                       
+                       
+                       
+                       </div>
+                           </form>
+           </div>
+           
+           
+       </div>
+   </div>
+</div>
+<!-- Services Details End --> 
+</div>
+<!-- Services Details End -->    
+<!-- Footer Area Start -->
+<div class="footer__four" style="padding-top:0px;background:black;">
+    
+<div class="copyright__four">
+       <div class="container">
+           <div class="row">
+               <div class="col-xl-12">
+                   <p>Copyright 2025  <a href="#">BimaLife</a> - All Rights Reserved</p>
+               </div>
+           </div>
+       </div>
+   </div>	
+</div>
+<!-- Footer Area End -->
+<!-- Scroll Btn Start -->
+<div class="scroll-up scroll-two">
+   <svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" /> </svg>
+</div>
+<!-- Scroll Btn End -->		
+<!-- Main JS -->
+
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Counter Up JS -->
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- Popper JS -->
+<script src="assets/js/popper.min.js"></script>
+<!-- Progressbar JS -->
+<script src="assets/js/progressbar.min.js"></script>
+<!-- Magnific Popup JS -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Swiper Bundle JS -->
+<script src="assets/js/swiper-bundle.min.js"></script>
+<!-- Isotope JS -->
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<!-- Waypoints JS -->
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<!-- Mean Menu JS -->
+<script src="assets/js/jquery.meanmenu.min.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/custom.js"></script>
+
+<script>
+   let currentStep = 1;
+
+   function nextStep(step) {
+       document.getElementById('step' + currentStep).classList.remove('active');
+       document.querySelector('.progress-bar li:nth-child(' + currentStep + ')').classList.remove('active');
+       currentStep = step;
+       document.getElementById('step' + currentStep).classList.add('active');
+       document.querySelector('.progress-bar li:nth-child(' + currentStep + ')').classList.add('active');
+   }
+
+   function prevStep(step) {
+       document.getElementById('step' + currentStep).classList.remove('active');
+       document.querySelector('.progress-bar li:nth-child(' + currentStep + ')').classList.remove('active');
+       currentStep = step;
+       document.getElementById('step' + currentStep).classList.add('active');
+       document.querySelector('.progress-bar li:nth-child(' + currentStep + ')').classList.add('active');
+   }
+
+   function submitForm() {
+       // Add form submission logic here
+       alert('Form submitted!');
+   }
+</script>
+                       
+

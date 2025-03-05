@@ -1,4 +1,10 @@
-<%= form_with(model: cover) do |form| %>
+<% if notice %>
+  <%= render 'layouts/alerts' %>
+<%end%>
+
+<%= form_with(model: @cover, url: covers_path, method: :post) do |form| %>
+  <%= form.hidden_field :debug_token, value: "test_submission" %>
+
   <% if cover.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(cover.errors.count, "error") %> prohibited this cover from being saved:</h2>
@@ -15,7 +21,7 @@
     <%= form.label :company_id, "Select Insurance Company" %>
     <%= form.collection_select :company_id, 
     @insurance_companies, :id, :company_name,
-    { prompt: "Choose a company" } ,  class:"form-control"%>
+    { prompt: "Choose a company" } ,  class:"form-control" %>
   </div>
    
 
@@ -41,7 +47,8 @@
   </div
 
   <br/>
-  <div class="form-group">
+
     <%= form.submit class:"btn btn-primary mr-2" %>
-  </div>
+
+
 <% end %>

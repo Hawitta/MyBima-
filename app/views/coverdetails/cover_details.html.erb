@@ -25,7 +25,7 @@
 						<div class="pricing__area-item-top">
 							<div class="pricing__area-item-top-price">
 				
-								<p>Copper Plan</p>
+								<p> <%= @coverdetail.cover.cover_name %> </p>
 								<h4>From <span>6000.00</span></h4>
 							</div>
 							<div class="pricing__area-item-top-icon">
@@ -35,7 +35,7 @@
 						<div class="pricing__area-item-content">
 							<div class="pricing__area-item-content-item">
 								<span>Coverage</span>
-								<h6>Family</h6>
+								<h6><%= @coverdetail.category %></h6>
 							</div>
 							<div class="pricing__area-item-content-item">
 								<span>Benefits</span>
@@ -43,16 +43,16 @@
 							</div>
 							<div class="pricing__area-item-content-item">
 								<span>Optional Covers</span>
-								<h6>None</h6>
+								<h6><%= @coverdetail.optional %></h6>
 							</div>
 							
 							<div class="pricing__area-item-content-item">
 								<span>Eligibility</span>
-								<h6> 18 – 60 Years</h6>
+								<h6> <%= @coverdetail.younger_age %> – <%= @coverdetail.older_age %> Years</h6>
 							</div>
 						</div>
 						<div class="pricing__area-item-btn">
-							<a href="health-quote.html?plan=1">Purchase Now</a>
+							<%= link_to "Purchase Now", quote_path %>
 						</div>
 					</div>
 				</div>
@@ -184,21 +184,5 @@
    
 	<!-- Services Details End -->    
 <!-- Footer Area Start -->
-	<div class="footer__four" style="padding-top:0px;background:black;">
-		 
-	<div class="copyright__four">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-12">
-						<p>Copyright 2025  <a href="#">BimaLife</a> - All Rights Reserved</p>
-					</div>
-				</div>
-			</div>
-		</div>	
-	</div>
-	<!-- Footer Area End -->
-	<!-- Scroll Btn Start -->
-	<div class="scroll-up scroll-two">
-		<svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" /> </svg>
-	</div>
+	
 	<!-- Scroll Btn End -->	

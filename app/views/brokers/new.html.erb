@@ -1,0 +1,11 @@
+<% content_for :title, "New broker" %>
+
+<h1>New broker</h1>
+
+<%= render "form", broker: @broker %>
+
+<br>
+
+<div>
+  <%= link_to "Back to brokers", brokers_path %>
+</div>

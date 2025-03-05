@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @stripe %>
+
+<div>
+  <%= link_to "Edit this stripe", edit_stripe_path(@stripe) %> |
+  <%= link_to "Back to stripes", stripes_path %>
+
+  <%= button_to "Destroy this stripe", @stripe, method: :delete %>
+</div>

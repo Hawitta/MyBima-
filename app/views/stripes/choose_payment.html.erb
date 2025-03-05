@@ -1,0 +1,241 @@
+
+	<!-- Services Details Start -->
+    <div class="services__details">
+        <div class="container">
+            <div class="row">
+				<div class="col-xl-8 col-lg-8 lg-mb-50">
+					<div class="services__details-left">
+						 
+						 
+
+						 <style>
+   
+
+    .checkout-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 20px 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header and payment info */
+    .checkout-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 20px;
+    }
+
+    .checkout-header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .payment-amount {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    /* Payment method selection */
+    .payment-method {
+      margin-bottom: 20px;
+    }
+
+    .payment-method label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .payment-method img {
+      height: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    /* Form layout */
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Card preview */
+    .card-preview {
+      flex: 1 1 300px;
+      min-width: 250px;
+      background: linear-gradient(135deg, #4cb7f5, #167fac);
+      color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .card-preview .card-number {
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .card-preview .card-holder {
+      margin-bottom: 5px;
+    }
+
+    .card-preview .card-expiry {
+      margin-top: 10px;
+    }
+
+    /* Card form */
+    .card-form {
+      flex: 2 1 300px;
+      min-width: 250px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group input[type="email"],
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .small-inputs {
+      display: flex;
+      gap: 10px;
+    }
+
+    .small-inputs .form-group {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    .billing-address {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Confirm and pay button */
+    .confirm-pay {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    .confirm-pay button {
+      background-color: #f8b500;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .confirm-pay button:hover {
+      background-color: #ff9f00;
+    }
+
+    /* Terms note */
+    .terms-note {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .terms-note a {
+      color: #167fac;
+      text-decoration: none;
+    }
+  </style>
+  
+	<div class="checkout-container">
+    <!-- Header: Title and Amount -->
+    <div class="checkout-header">
+      <h1>Checkout</h1>
+      <div class="payment-amount">Today's Payment: <strong>Ksh 17.24</strong></div>
+    </div>
+
+    <!-- Payment Method Selection -->
+    <div class="payment-method">
+      <label>
+        <input type="radio" name="payment-method" checked />
+        Card Payment
+		    <p><span class="card-brand">
+                <svg viewBox="0 0 3384.54 2077.85" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m1461.26 739.84-251.37 599.74h-164l-123.7-478.62c-7.51-29.48-14.04-40.28-36.88-52.7-37.29-20.23-98.87-39.21-153.05-50.99l3.68-17.43h263.99c33.65 0 63.9 22.4 71.54 61.15l65.33 347.04 161.46-408.2h163zm642.58 403.93c.66-158.29-218.88-167.01-217.37-237.72.47-21.52 20.96-44.4 65.81-50.24 22.23-2.91 83.48-5.13 152.95 26.84l27.25-127.18c-37.33-13.55-85.36-26.59-145.12-26.59-153.35 0-261.27 81.52-262.18 198.25-.99 86.34 77.03 134.52 135.81 163.21 60.47 29.38 80.76 48.26 80.53 74.54-.43 40.23-48.23 57.99-92.9 58.69-77.98 1.2-123.23-21.1-159.3-37.87l-28.12 131.39c36.25 16.63 103.16 31.14 172.53 31.87 162.99 0 269.61-80.51 270.11-205.19m404.94 195.81h143.49l-125.25-599.74h-132.44c-29.78 0-54.9 17.34-66.02 44l-232.81 555.74h162.91L2291 1250h199.05l18.73 89.58zm-173.11-212.5 81.66-225.18 47 225.18h-128.66zm-652.74-387.24-128.29 599.74H1399.5l128.34-599.74h155.09z" style="fill: rgb(20, 52, 203);"></path></svg></span><span class="card-brand"><svg viewBox="0 0 146.802 120.415" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h146.802v120.415H0z" style="fill: none;"></path><path d="M36.345 105.259v-6a3.558 3.558 0 0 0-3.76-3.8 3.702 3.702 0 0 0-3.359 1.7 3.511 3.511 0 0 0-3.16-1.7 3.161 3.161 0 0 0-2.799 1.42V95.7h-2.08v9.56h2.1v-5.3a2.236 2.236 0 0 1 2.34-2.54c1.38 0 2.08.9 2.08 2.52v5.32h2.1v-5.3a2.254 2.254 0 0 1 2.339-2.54c1.42 0 2.1.9 2.1 2.52v5.32zm31.076-9.56h-3.4V92.8h-2.1v2.9h-1.939v1.9h1.94v4.359c0 2.22.86 3.54 3.32 3.54a4.885 4.885 0 0 0 2.599-.74l-.6-1.78a3.839 3.839 0 0 1-1.84.54c-1.04 0-1.38-.64-1.38-1.6V97.6h3.4zm17.738-.24a2.82 2.82 0 0 0-2.52 1.4V95.7h-2.06v9.56h2.08v-5.36c0-1.58.68-2.46 2.04-2.46a3.388 3.388 0 0 1 1.3.24l.64-1.96a4.446 4.446 0 0 0-1.48-.26Zm-26.817 1a7.148 7.148 0 0 0-3.9-1c-2.419 0-3.979 1.16-3.979 3.06 0 1.56 1.16 2.52 3.3 2.82l.98.14c1.14.16 1.68.46 1.68 1 0 .74-.76 1.16-2.18 1.16a5.092 5.092 0 0 1-3.18-1l-.98 1.62a6.897 6.897 0 0 0 4.14 1.24c2.76 0 4.36-1.3 4.36-3.12 0-1.68-1.26-2.56-3.34-2.86l-.98-.14c-.9-.12-1.62-.3-1.62-.94 0-.7.68-1.12 1.82-1.12a6.163 6.163 0 0 1 2.98.82zm55.713-1a2.82 2.82 0 0 0-2.52 1.4V95.7h-2.06v9.56h2.08v-5.36c0-1.58.68-2.46 2.04-2.46a3.389 3.389 0 0 1 1.3.24l.64-1.96a4.447 4.447 0 0 0-1.48-.26zm-26.797 5.02a4.83 4.83 0 0 0 5.1 5.02 5.007 5.007 0 0 0 3.44-1.14l-1-1.68a4.202 4.202 0 0 1-2.5.86 3.065 3.065 0 0 1 0-6.12 4.201 4.201 0 0 1 2.5.86l1-1.68a5.008 5.008 0 0 0-3.44-1.14 4.83 4.83 0 0 0-5.1 5.02zm19.478 0v-4.78h-2.08v1.16a3.626 3.626 0 0 0-3.02-1.4 5.025 5.025 0 0 0 0 10.04 3.626 3.626 0 0 0 3.02-1.4v1.16h2.08zm-7.74 0a2.894 2.894 0 1 1 2.9 3.06 2.867 2.867 0 0 1-2.9-3.06zM73.9 95.459a5.024 5.024 0 0 0 .14 10.04 5.81 5.81 0 0 0 3.92-1.34l-1.02-1.54a4.554 4.554 0 0 1-2.78 1 2.655 2.655 0 0 1-2.86-2.34h7.1c.02-.26.04-.52.04-.8-.02-2.98-1.86-5.02-4.54-5.02zm-.04 1.86a2.374 2.374 0 0 1 2.42 2.32h-4.96a2.46 2.46 0 0 1 2.54-2.32zm52.173 3.16v-8.618h-2.08v4.999a3.626 3.626 0 0 0-3.02-1.4 5.025 5.025 0 0 0 0 10.039 3.626 3.626 0 0 0 3.02-1.4v1.16h2.08zm3.467 3.394a.954.954 0 0 1 .376.075.976.976 0 0 1 .307.204.957.957 0 0 1 .208.302.934.934 0 0 1 0 .737.965.965 0 0 1-.208.302.998.998 0 0 1-.307.205.94.94 0 0 1-.376.076.968.968 0 0 1-.898-.583.936.936 0 0 1 0-.737.963.963 0 0 1 .206-.302.95.95 0 0 1 .309-.204.982.982 0 0 1 .383-.075zm0 1.69a.707.707 0 0 0 .286-.057.754.754 0 0 0 .233-.159.745.745 0 0 0 0-1.048.738.738 0 0 0-.233-.157.717.717 0 0 0-.286-.057.747.747 0 0 0-.292.057.73.73 0 0 0-.237.157.744.744 0 0 0 0 1.048.745.745 0 0 0 .237.159.737.737 0 0 0 .292.058zm.056-1.184a.402.402 0 0 1 .262.075.253.253 0 0 1 .092.206.24.24 0 0 1-.074.18.35.35 0 0 1-.208.088l.289.333h-.226l-.268-.33h-.086v.33h-.189v-.882zm-.22.165v.235h.218a.213.213 0 0 0 .118-.03.1.1 0 0 0 .044-.089.098.098 0 0 0-.044-.087.215.215 0 0 0-.118-.029zm-11.042-4.065a2.894 2.894 0 1 1 2.9 3.06 2.867 2.867 0 0 1-2.9-3.06zm-70.23 0v-4.78h-2.08v1.16a3.626 3.626 0 0 0-3.02-1.4 5.025 5.025 0 0 0 0 10.04 3.626 3.626 0 0 0 3.02-1.4v1.16h2.08zm-7.74 0a2.894 2.894 0 1 1 2.9 3.06 2.867 2.867 0 0 1-2.9-3.06z" style="fill: rgb(0, 0, 0); fill-opacity: 1;"></path><path d="M57.652 22.854h31.5V79.46h-31.5z" style="fill: rgb(255, 95, 0);"></path><path d="M382.25 296.95A35.938 35.938 0 0 1 396 268.646a36 36 0 1 0 0 56.607 35.938 35.938 0 0 1-13.75-28.303z" transform="translate(-322.598 -245.793)" style="fill: rgb(235, 0, 27);"></path><path d="M454.245 296.95A35.999 35.999 0 0 1 396 325.253a36.005 36.005 0 0 0 0-56.607 35.999 35.999 0 0 1 58.245 28.304zM450.81 319.257v-1.16h.467v-.235h-1.19v.236h.468v1.158zm2.31 0v-1.398h-.364l-.42.961-.42-.96h-.364v1.397h.257v-1.054l.394.908h.267l.393-.91v1.056z" transform="translate(-322.598 -245.793)" style="fill: rgb(247, 158, 27);"></path></svg></span></p> </div>
+
+      </label>
+
+    <!-- Main form area: card preview on the right, form on the left -->
+    <div class="form-container">
+      <!-- Card Form -->
+      <div class="card-form">
+       <%= render 'form', stripe: @stripe %>
+      </div>
+
+      <!-- Card Preview -->
+    
+    </div>
+  </div>
+						
+						
+				</div></div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="all__sidebar" style="top:0px;">
+					
+					 <div class="all__sidebar-item">
+              
+<div class="container">
+    <h2>Your Order</h2>
+
+    <div class="order-details">
+        <p><strong>Quote Ref:</strong> SCW2490555</p>
+        <p><strong>Policy Period:</strong> 06/02/2025 - 05/02/2026</p>
+    </div>
+
+    <div class="payment-details">
+        <p><strong>Policy Fee:</strong> Total Including IPT at 12.0%</p>
+        <p><strong>Payment Method:</strong> One-off payment</p>
+    </div>
+
+    <div class="contact-info">
+        <p>If you have any questions about your policy or have any trouble paying, please call us on:</p>
+        <p><strong>Phone:</strong> <a href="tel:01494484800">01494 484800</a></p>
+        <p><strong>Office Hours:</strong> Mon-Fri 9am - 5:30pm</p>
+    </div>
+</div>
+
+			  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- Services Details End -->    
+<!-- Footer Area Start -->
+		
+	</div>
+	<!-- Footer Area End -->
+	<!-- Scroll Btn Start -->
+	<div class="scroll-up scroll-two">
+		<svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" /> </svg>
+	</div>
+	<!-- Scroll Btn End -->		
+	<!-- Main JS -->
+	

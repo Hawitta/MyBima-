@@ -1,0 +1,12 @@
+<% content_for :title, "Editing beneficiary" %>
+
+<h1>Editing beneficiary</h1>
+
+<%= render "form", beneficiary: @beneficiary %>
+
+<br>
+
+<div>
+  <%= link_to "Show this beneficiary", @beneficiary %> |
+  <%= link_to "Back to benefitiaries", benefitiaries_path %>
+</div>

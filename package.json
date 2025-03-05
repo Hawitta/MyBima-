@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Hawitta/MyBima-/issues"
   },
-  "homepage": "https://github.com/Hawitta/MyBima-#readme"
+  "homepage": "https://github.com/Hawitta/MyBima-#readme",
+  "dependencies": {
+    "@rails/ujs": "^7.1.3-4"
+  }
 }

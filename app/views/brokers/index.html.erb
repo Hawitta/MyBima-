@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Brokers" %>
+
+<h1>Brokers</h1>
+
+<div id="brokers">
+  <% @brokers.each do |broker| %>
+    <%= render broker %>
+    <p>
+      <%= link_to "Show this broker", broker %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New broker", new_broker_path %>

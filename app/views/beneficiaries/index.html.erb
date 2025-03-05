@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Benefitiaries" %>
+
+<h1>Beneficiaries</h1>
+
+<div id="benefitiaries">
+  <% @beneficiaries.each do |beneficiary| %>
+    <%= render benefitiary %>
+    <p>
+      <%= link_to "Show this beneficiary", beneficiary %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New beneficiary", new_beneficiary_path %>

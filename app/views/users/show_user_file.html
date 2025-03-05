@@ -1,0 +1,7 @@
+<% if @user.attached_id.attached? %>
+  <p>Attached ID: <%= link_to "Download", rails_blob_path(@user.attached_id, disposition: "attachment") %></p>
+<% end %>
+
+<% if @user.attached_kra.attached? %>
+  <p>Attached KRA: <%= link_to "Download", rails_blob_path(@user.attached_kra, disposition: "attachment") %></p>
+<% end %>
